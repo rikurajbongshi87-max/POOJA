@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World!</h1>
+      <p id="currentTime"></p>
+      <script src="script.js"></script>
+  </body>
+</html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {POOJA
+            color: #d63384;
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        #yesBtn {
+            background-color: #28a745;
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        #yesBtn:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        #noBtn {
+            background-color: #dc3545;
+            color: white;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+        }
+
+        /* Hidden success message style */
+        .hidden-message {
+            display: none;
+            color: #d63384;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hidden-message h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .hidden-message p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainCard">
+        <div id="questionBox">
+            <h1>I love you pooja/ Kiya tum mujhse shadi krogi❤️</h1>
+            <div class="btn-group">
+                <button id="yesBtn" onclick="acceptProposal()">Yes! 🥰</button>
+                <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No 😢</button>
+            </div>
+        </div>
+
+        <div class="hidden-message" id="successBox">
+            <h2>Yay! Best Decision Ever! I love you too 🎉</h2>
+            <p>You just made me the happiest person in the world!POOJA ❤️💍</p>
+        </div>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            // Screen par random position par button ko move karana
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+
+        function acceptProposal() {
+            document.getElementById('questionBox').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
